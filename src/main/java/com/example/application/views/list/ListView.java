@@ -13,8 +13,10 @@ import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+import javax.annotation.security.PermitAll;
 import java.util.Collections;
 
+@PermitAll
 @PageTitle("Contacts | Vaadin CRM")
 @Route(value = "", layout = MainLayout.class)
 public class ListView extends VerticalLayout {
@@ -77,12 +79,12 @@ public class ListView extends VerticalLayout {
     }
 
     private HorizontalLayout getToolbar() {
-        filterText.setPlaceholder("filter by name.");
+        filterText.setPlaceholder("filtruj po nazwie");
         filterText.setClearButtonVisible(true);
         filterText.setValueChangeMode(ValueChangeMode.LAZY);
         filterText.addValueChangeListener(e -> updateList());
 
-        Button addContactButton = new Button("add contact");
+        Button addContactButton = new Button("dodaj kontakt");
         addContactButton.addClickListener(click -> updateList());
 
         HorizontalLayout toolbar = new HorizontalLayout(filterText, addContactButton);
