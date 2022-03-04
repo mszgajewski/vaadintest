@@ -32,9 +32,9 @@ public class ContactForm extends FormLayout {
     ComboBox<Status> status = new ComboBox<>("Status");
     ComboBox<Company> company = new ComboBox<>("Company");
 
-    Button save = new Button("Save");
-    Button delete = new Button("Delete");
-    Button cancel = new Button("Cancel");
+    Button save = new Button("Zapisz");
+    Button delete = new Button("Skasuj");
+    Button cancel = new Button("Anuluj");
     private Contact contact;
 
     public ContactForm(List<Company> companies, List<Status> statuses) {
