@@ -2,7 +2,6 @@ package com.example.application.data.entity;
 
 import com.example.application.data.AbstractEntity;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;

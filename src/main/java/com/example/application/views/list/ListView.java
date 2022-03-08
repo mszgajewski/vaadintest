@@ -3,7 +3,6 @@ package com.example.application.views.list;
 import com.example.application.data.entity.Contact;
 import com.example.application.data.service.CrmService;
 import com.example.application.views.MainLayout;
-import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -12,12 +11,16 @@ import com.vaadin.flow.component.textfield.TextField;
 import com.vaadin.flow.data.value.ValueChangeMode;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.security.PermitAll;
 import java.util.Collections;
 
+@Component
+@Scope("prototype")
 @PermitAll
-@PageTitle("Contacts | Vaadin CRM")
+@PageTitle("Contacts | Kontakty")
 @Route(value = "", layout = MainLayout.class)
 public class ListView extends VerticalLayout {
     Grid<Contact> grid = new Grid<>(Contact.class);
@@ -85,7 +88,7 @@ public class ListView extends VerticalLayout {
         filterText.addValueChangeListener(e -> updateList());
 
         Button addContactButton = new Button("dodaj kontakt");
-        addContactButton.addClickListener(click -> updateList());
+        addContactButton.addClickListener(click -> addContact());
 
         HorizontalLayout toolbar = new HorizontalLayout(filterText, addContactButton);
         toolbar.addClassName("toolbar");

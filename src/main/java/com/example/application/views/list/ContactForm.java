@@ -26,11 +26,11 @@ public class ContactForm extends FormLayout {
 
     Binder<Contact> binder = new BeanValidationBinder<>(Contact.class);
 
-    TextField firstName = new TextField("First Name");
-    TextField lastName = new TextField("Last Name");
+    TextField firstName = new TextField("Imię");
+    TextField lastName = new TextField("Nazwisko");
     EmailField email = new EmailField("Email");
     ComboBox<Status> status = new ComboBox<>("Status");
-    ComboBox<Company> company = new ComboBox<>("Company");
+    ComboBox<Company> company = new ComboBox<>("Firma");
 
     Button save = new Button("Zapisz");
     Button delete = new Button("Skasuj");
