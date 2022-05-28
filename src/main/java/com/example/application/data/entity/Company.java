@@ -17,7 +17,7 @@ public class Company extends AbstractEntity {
 
     @OneToMany(mappedBy = "company")
     @Nullable
-    private List<Contact> empolyees = new LinkedList<>();
+    private List<Contact> employees = new LinkedList<>();
 
     @Formula("(select count(c.id) from Contact c where c.company_id = id)")
     private int employeeCount;
@@ -30,16 +30,12 @@ public class Company extends AbstractEntity {
         this.name = name;
     }
 
-    public List<Contact> getEmpolyees() {
-        return empolyees;
+    public List<Contact> getEmployees() {
+        return employees;
     }
 
-    public void setEmpolyees(List<Contact> empolyees) {
-        this.empolyees = empolyees;
-    }
-
-    public int getEmployeeCount() {
-        return employeeCount;
+    public void setEmployees(List<Contact> employees) {
+        this.employees = employees;
     }
 
 }
